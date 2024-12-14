@@ -14,7 +14,7 @@ def extract_data(path):
 def is_safe(line):
     pairs = list(zip(line[:-1], line[1:]))
     if all(i < j for i, j in pairs) or all(j < i for i, j in pairs):
-        if all(1 <= abs(i - j) and abs(i - j) <= 3 for i, j in pairs):
+        if all(1 <= abs(i - j) <= 3 for i, j in pairs):
              return True
     
     return False
